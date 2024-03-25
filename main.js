@@ -87,38 +87,39 @@ posts.forEach((singlePost) =>{
 // FUNCTION 
 // funzione che genera il template di una singola squadra
 function generateSinglePostTemplate(postObject){
-    console.log(postObject);
+    const {id, content, media, author, likes, created} = postObject;
     const postTemplate = `
     <div class="post">
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="${postObject.author.image}" alt="Phil Mangione">                    
+                <img class="profile-pic" src="${author.image}" alt="Phil Mangione">                    
             </div>
             <div class="post-meta__data">
-                <div class="post-meta__author">${postObject.author.name}</div>
-                <div class="post-meta__time">${postObject.created}</div>
+                <div class="post-meta__author">${author.name}</div>
+                <div class="post-meta__time">${created}</div>
             </div>                    
         </div>
     </div>
-    <div class="post__text">${postObject.content}</div>
+    <div class="post__text">${content}</div>
     <div class="post__image">
-        <img src="${postObject.media}" alt="">
+        <img src="${media}" alt="">
     </div>
     <div class="post__footer">
         <div class="likes js-likes">
             <div class="likes__cta">
-                <a class="like-button  js-like-button" href="#" data-postid="${postObject.id}">
+                <a class="like-button  js-like-button" href="#" data-postid="${id}">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                     <span class="like-button__label">Mi Piace</span>
                 </a>
             </div>
             <div class="likes__counter">
-                Piace a <b id="like-counter-1" class="js-likes-counter">${postObject.likes}</b> persone
+                Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone
             </div>
         </div> 
     </div>            
 </div>
     `;
     return postTemplate;
+
 };
