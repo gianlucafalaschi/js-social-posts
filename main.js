@@ -70,7 +70,8 @@ BONUS
 3. Al click su un pulsante "Mi Piace" di un post, se abbiamo già cliccato dobbiamo decrementare il contatore 
 e cambiare il colore del bottone. */
 
-// Milestone 1 - Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post 
+// MILESTONE 1
+// Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post 
 // del nostro feed.
 
 // seleziono l'elemento container
@@ -83,6 +84,18 @@ posts.forEach((singlePost) =>{
     container.innerHTML += postTemplate;
 });
 
+//MILESTONE 2
+// Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo 
+// il counter dei likes relativo.
+// Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+
+// prendo tutti i pulsanti mi piace e aggiungo l'addEventListener
+const allLikeButtons = document.querySelectorAll('.js-like-button');
+allLikeButtons.forEach((likeDOMElement, index) =>{
+    likeDOMElement.addEventListener('click', function(){
+        
+    });
+});
 
 // FUNCTION 
 // funzione che genera il template di una singolo post
