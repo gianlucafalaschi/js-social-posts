@@ -107,7 +107,8 @@ const allLikeCounter = document.querySelectorAll('.js-likes-counter');
         // il counter dei like incrementa di 1
         const relatedLikeCounter = allLikeCounter[index];
         relatedLikeCounter.innerHTML;
-        console.log(relatedLikeCounter.innerHTML);        
+        //console.log(parseInt(relatedLikeCounter.innerHTML++));
+        let relatedLikeCounterIncreased = parseInt(relatedLikeCounter.innerHTML++);       
     });
 });
 
