@@ -76,32 +76,34 @@ e cambiare il colore del bottone. */
 // seleziono l'elemento container
 const container = document.querySelector('#container');
 // per ogni oggetto dell'array posts
-// creo una variabile che contiene un template
 posts.forEach((singlePost) =>{
-    const postTemplate = generateSinglePostTemplate();
+    // genero un post con il template
+    const postTemplate = generateSinglePostTemplate(singlePost);
     // appendo il template al container
     container.innerHTML += postTemplate;
 });
 
 
 // FUNCTION 
-function generateSinglePostTemplate(){
+// funzione che genera il template di una singola squadra
+function generateSinglePostTemplate(postObject){
+    console.log(postObject);
     const postTemplate = `
     <div class="post">
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
+                <img class="profile-pic" src="${postObject.author.image}" alt="Phil Mangione">                    
             </div>
             <div class="post-meta__data">
-                <div class="post-meta__author">Phil Mangione</div>
-                <div class="post-meta__time">4 mesi fa</div>
+                <div class="post-meta__author">${postObject.author.name}</div>
+                <div class="post-meta__time">${postObject.created}</div>
             </div>                    
         </div>
     </div>
-    <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
+    <div class="post__text">${postObject.content}</div>
     <div class="post__image">
-        <img src="https://unsplash.it/600/300?image=171" alt="">
+        <img src="${postObject.media}" alt="">
     </div>
     <div class="post__footer">
         <div class="likes js-likes">
@@ -112,7 +114,7 @@ function generateSinglePostTemplate(){
                 </a>
             </div>
             <div class="likes__counter">
-                Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                Piace a <b id="like-counter-1" class="js-likes-counter">${postObject.likes}</b> persone
             </div>
         </div> 
     </div>            
