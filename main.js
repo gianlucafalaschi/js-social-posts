@@ -85,7 +85,7 @@ posts.forEach((singlePost) =>{
 
 
 // FUNCTION 
-// funzione che genera il template di una singola squadra
+// funzione che genera il template di una singolo post
 function generateSinglePostTemplate(postObject){
     const {id, content, media, author, likes, created} = postObject;
     const postTemplate = `
@@ -114,7 +114,7 @@ function generateSinglePostTemplate(postObject){
                 </a>
             </div>
             <div class="likes__counter">
-                Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone
+                Piace a <b id="like-counter-${id}" class="js-likes-counter">${likes}</b> persone
             </div>
         </div> 
     </div>            
