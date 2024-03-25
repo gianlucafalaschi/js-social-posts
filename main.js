@@ -91,13 +91,23 @@ posts.forEach((singlePost) =>{
 
 // prendo tutti i pulsanti mi piace e aggiungo l'addEventListener
 const allLikeButtons = document.querySelectorAll('.like-button');
+// seleziono tutti i counter dei like
+const allLikeCounter = document.querySelectorAll('.js-likes-counter');
+
+
+
+
 // console.log(allLikeButtons);
- allLikeButtons.forEach((likeDOMElement, index) =>{
+ allLikeButtons.forEach((likeDOMElement, index) =>{ 
     likeDOMElement.addEventListener('click', function(){
         const relatedLikeButton = allLikeButtons[index];
         console.log(relatedLikeButton);
         // il colore del testo del bottone cambia
         relatedLikeButton.classList.add('like-button--liked');
+        // il counter dei like incrementa di 1
+        const relatedLikeCounter = allLikeCounter[index];
+        relatedLikeCounter.innerHTML;
+        console.log(relatedLikeCounter.innerHTML);        
     });
 });
 
