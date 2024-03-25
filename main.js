@@ -90,10 +90,14 @@ posts.forEach((singlePost) =>{
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 // prendo tutti i pulsanti mi piace e aggiungo l'addEventListener
-const allLikeButtons = document.querySelectorAll('.js-like-button');
-allLikeButtons.forEach((likeDOMElement, index) =>{
+const allLikeButtons = document.querySelectorAll('.like-button');
+// console.log(allLikeButtons);
+ allLikeButtons.forEach((likeDOMElement, index) =>{
     likeDOMElement.addEventListener('click', function(){
-        
+        const relatedLikeButton = allLikeButtons[index];
+        console.log(relatedLikeButton);
+
+        relatedLikeButton.classList.add('like-button--liked');
     });
 });
 
