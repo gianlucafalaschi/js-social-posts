@@ -96,7 +96,7 @@ const allLikeButtons = document.querySelectorAll('.like-button');
     likeDOMElement.addEventListener('click', function(){
         const relatedLikeButton = allLikeButtons[index];
         console.log(relatedLikeButton);
-
+        // il colore del testo del bottone cambia
         relatedLikeButton.classList.add('like-button--liked');
     });
 });
