@@ -75,8 +75,17 @@ e cambiare il colore del bottone. */
 
 // seleziono l'elemento container
 const container = document.querySelector('#container');
-
+// per ogni oggetto dell'array posts
+// creo una variabile che contiene un template
 posts.forEach((singlePost) =>{
+    const postTemplate = generateSinglePostTemplate();
+    // appendo il template al container
+    container.innerHTML += postTemplate;
+});
+
+
+// FUNCTION 
+function generateSinglePostTemplate(){
     const postTemplate = `
     <div class="post">
     <div class="post__header">
@@ -109,6 +118,5 @@ posts.forEach((singlePost) =>{
     </div>            
 </div>
     `;
-    
-    container.innerHTML += postTemplate;
-});
+    return postTemplate;
+};
